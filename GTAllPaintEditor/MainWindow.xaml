@@ -1,0 +1,77 @@
+﻿<Window x:Class="GTAllPaintEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GTAllPaintEditor"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        AllowDrop="true"
+        Drop="Window_Drop"
+        Title="GT6 Allpaint.bin Editor" Height="496" Width="518" MinHeight="422" MaxWidth="518">
+    <Grid>
+        <ListBox Name="lb_Paints" HorizontalAlignment="Left" Margin="10,58,0,10" Width="106" SelectionChanged="lb_Paints_SelectionChanged" VerticalAlignment="Stretch"/>
+
+        <Button Name="btn_LoadAllPaint" Content="Load allpaint.bin" HorizontalAlignment="Left" Margin="10,8,0,0" Width="106" Click="btn_LoadAllPaint_Click" Height="20" VerticalAlignment="Top"/>
+        <Button Name="btn_SaveAllPaint" IsEnabled="False" Content="Save allpaint.bin" HorizontalAlignment="Left" Margin="10,33,0,0" Width="106" Click="btn_SaveAllPaint_Click" Height="20" VerticalAlignment="Top"/>
+
+        <GroupBox Name="gp_PaintImage" Header="Paint Image" IsEnabled="False" Height="182" Margin="131,0,10,195" VerticalAlignment="Top">
+            <Grid>
+                <Border BorderBrush="Gray" BorderThickness="1" Margin="10,18,92,16" Drop="img_PaintImage_Drop">
+                    <Image Name="img_PaintImage" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+                </Border>
+                <Button Name="img_LoadPaintImage" Content="Load Image" Margin="270,41,8,94" Click="img_LoadPaintImage_Click"/>
+                <Button Name="img_SavePaintImage" Content="Save Image" Margin="270,88,8,47" Click="img_SavePaintImage_Click"/>
+                <Label Content="64x32" Foreground="Gray" Width="50" Margin="224,138,83,-2"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Name="gp_PaintImage2" Header="Paint Image 2" IsEnabled="False" Height="83" Margin="131,187,10,0" VerticalAlignment="Top">
+            <Grid>
+                <Border BorderBrush="Gray" BorderThickness="1" Margin="10,18,93,16" Drop="img_PaintImage2_Drop">
+                    <Image Name="img_PaintImage2" RenderOptions.BitmapScalingMode="NearestNeighbor" Stretch="Fill"/>
+                </Border>
+                <Button Name="img_LoadPaintImage2" Content="Load Image" Margin="272,6,6,30" Click="img_LoadPaintImage2_Click"/>
+                <Button Name="img_SavePaintImage2" Content="Save Image" Margin="272,35,6,4" Click="img_SavePaintImage2_Click"/>
+                <Label Content="8x1" Foreground="Gray" Margin="233,39,87,-6"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Name="gb_PaintProperties" Header="Paint Properties" IsEnabled="False" Height="182" Margin="131,0,10,8" VerticalAlignment="Bottom">
+            <Grid>
+                <Label Content="CCBinID" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
+                <xctk:IntegerUpDown Margin="65,10,0,0" Value="{Binding ID}" HorizontalAlignment="Left" Width="72" Height="20" VerticalAlignment="Top"/>
+
+                <Label Content="UnkID" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top"/>
+                <xctk:IntegerUpDown Margin="65,35,0,0" Value="{Binding UnkID}" HorizontalAlignment="Left" Width="72" Height="20" VerticalAlignment="Top"/>
+
+                <Label Content="Unk1" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top"/>
+                <xctk:ByteUpDown Margin="65,60,0,0" Value="{Binding Unk1}" HorizontalAlignment="Left" Width="56" Height="20" VerticalAlignment="Top"/>
+
+                <Label Content="Unk2" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top"/>
+                <xctk:ByteUpDown Margin="65,85,0,0" Value="{Binding Unk2}" HorizontalAlignment="Left" Width="56" Height="20" VerticalAlignment="Top"/>
+
+                <Label Content="Unk3" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top"/>
+                <xctk:ByteUpDown Margin="65,110,0,0" Value="{Binding Unk3}" HorizontalAlignment="Left" Width="56" Height="20" VerticalAlignment="Top"/>
+
+                <Label Content="Unk4" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top"/>
+                <xctk:ByteUpDown Margin="65,135,0,0" Value="{Binding Unk4}" HorizontalAlignment="Left" Width="56" Height="20" VerticalAlignment="Top"/>
+                
+                <Label Content="Chrome" Margin="203,7,88,0" VerticalAlignment="Top"/>
+                <xctk:SingleUpDown Margin="0,10,10,129" Value="{Binding Chrome}" HorizontalAlignment="Right" Width="73"/>
+
+                <Label Content="Reflectiveness" HorizontalAlignment="Left" Margin="126,57,0,0" VerticalAlignment="Top" Width="85"/>
+                <xctk:SingleUpDown Margin="216,60,10,79" Value="{Binding Reflectiveness}"/>
+
+                <Label Content="ReflectionR " HorizontalAlignment="Left" Margin="136,82,0,0" VerticalAlignment="Top" Width="75"/>
+                <xctk:SingleUpDown Margin="216,85,10,54" Value="{Binding ReflectPowerR}"/>
+
+                <Label Content="ReflectionG " HorizontalAlignment="Left" Margin="136,107,0,0" VerticalAlignment="Top" Width="75"/>
+                <xctk:SingleUpDown Margin="216,110,10,29" Value="{Binding ReflectPowerG}"/>
+
+                <Label Content="ReflectionB " HorizontalAlignment="Left" Margin="136,132,0,0" VerticalAlignment="Top"/>
+                <xctk:SingleUpDown Margin="216,135,10,4" Value="{Binding ReflectPowerB}"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
