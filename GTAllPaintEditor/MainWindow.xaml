@@ -33,7 +33,7 @@
                 </Border>
                 <Button Name="img_LoadPaintImage2" Content="Load Image" Margin="272,6,6,30" Click="img_LoadPaintImage2_Click"/>
                 <Button Name="img_SavePaintImage2" Content="Save Image" Margin="272,35,6,4" Click="img_SavePaintImage2_Click"/>
-                <Label Content="8x1" Foreground="Gray" Margin="233,39,87,-6"/>
+                <Label Content="32x1" Foreground="Gray" Margin="228,39,87,-6"/>
             </Grid>
         </GroupBox>
 

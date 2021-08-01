@@ -238,9 +238,9 @@ namespace GTAllPaintEditor
             try
             {
                 img = Bitmap.FromFile(fileName);
-                if (img.Width != 64 || img.Height != 32)
+                if (img.Width != 32 || img.Height != 1)
                 {
-                    MessageBox.Show("Invalid image", "Image must be 64x32.", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Invalid image", "Image must be 32x1.", MessageBoxButton.OK, MessageBoxImage.Warning);
                     img.Dispose();
                     return;
                 }
